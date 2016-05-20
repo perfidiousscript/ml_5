@@ -1,0 +1,10 @@
+lib/*
+.DS_store
+ex5*.m
+featureNormalize.m
+fmincg.m
+learningCurve.m
+plotFit.m
+polyFeatures.m
+submit.m
+token.mat
