@@ -25,12 +25,14 @@ J = (1 / (2 * m)) * sum(((X * theta) - y ).^2) + reg;
 
 %Regularization
 
-gradReg = (lambda / m) * [0; theta(2:end)];
+gradReg = (lambda / m) * [0, theta'(:,2:end)];
 
-grad = ( 1 / m ) *  X'*(X - y) + gradReg;
+grad_pre = ( 1 / m ) *  (X'*((X * theta) - y));
+
+grad = grad_pre + gradReg;
 
 % =========================================================================
 
-grad = grad(:);
+grad = diag(grad);
 
 end
